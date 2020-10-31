@@ -1,7 +1,7 @@
 name: Automatic Update
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 * * * *'
 jobs:
   merge:
     runs-on: ubuntu-latest
