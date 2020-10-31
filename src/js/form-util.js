@@ -3,7 +3,7 @@ import { addSlash, getFormattedDate } from './util'
 import pdfBase from '../certificate.pdf'
 import { generatePdf } from './pdf-util'
 
-import { setPreviousFormValue } from './localstorage'
+import { setPreviousFormValue } from './local-storage'
 
 const conditions = {
   '#field-firstname': {
@@ -131,16 +131,16 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
     console.log(getProfile(formInputs), reasons)
 
-    const profile = getProfile(formInputs)
+    const profile = getProfile(formInputs);
 
     ['address',
-    'birthday',
-    'city',
-    'firstname',
-    'lastname',
-    'placeofbirth',
-    'zipcode',
-  ].forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
+      'birthday',
+      'city',
+      'firstname',
+      'lastname',
+      'placeofbirth',
+      'zipcode',
+    ].forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
 
     const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase)
 

@@ -6,7 +6,7 @@ import formData from '../form-data.json'
 
 import { $, appendTo, createElement } from './dom-utils'
 
-import { getPreviousFormValue } from './localstorage'
+import { getPreviousFormValue } from './local-storage'
 
 const createTitle = () => {
   const h2 = createElement('h2', { className: 'titre-2', innerHTML: 'Remplissez en ligne votre déclaration numérique : ' })
