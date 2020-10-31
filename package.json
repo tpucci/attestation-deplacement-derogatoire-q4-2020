@@ -22,16 +22,9 @@
     "serve": "serve dist",
     "serve:dist": "serve dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lab-mi/attestation-deplacement-derogatoire-q4-2020"
-  },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lab-mi/attestation-deplacement-derogatoire-q4-2020/issues"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
