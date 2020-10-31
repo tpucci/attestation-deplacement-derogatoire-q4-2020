@@ -3,7 +3,7 @@ name: Deploy to Github Pages
 on: push
 
 env:
-  PUBLIC_URL: '/attestation-deplacement-derogatoire-q4-2020'
+  PUBLIC_URL: './'
 
 jobs:
   deploy:
