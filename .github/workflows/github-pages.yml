@@ -19,7 +19,7 @@ jobs:
       - name: Building App
         run: npm run build:ci
         env:
-          PUBLIC_URL: /
+          PUBLIC_URL: 'attestation-deplacement-derogatoire-q4-2020/'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
