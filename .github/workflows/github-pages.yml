@@ -2,9 +2,6 @@ name: Deploy to Github Pages
 
 on: push
 
-env:
-  PUBLIC_URL: '/attestation-deplacement-derogatoire-q4-2020'
-
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -34,6 +31,8 @@ jobs:
 
       - name: Building App
         run: npm run build:ci
+        env:
+          PUBLIC_URL: '/attestation-deplacement-derogatoire-q4-2020'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
