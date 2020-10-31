@@ -1,3 +1,7 @@
+# NB
+
+Cette version modifiée du site officiel du ministère de l'intérieur est mise à jour automatiquement à 4h du matin tous les jours.
+
 # Générateur de certificat de déplacement
 
 ## Développer
