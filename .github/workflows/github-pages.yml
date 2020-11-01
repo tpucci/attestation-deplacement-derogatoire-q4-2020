@@ -1,6 +1,8 @@
 name: Deploy to Github Pages
 
-on: push
+on:
+  push:
+  workflow_dispatch:
 
 env:
   PUBLIC_URL: 'https://tpucci.github.io/attestation-deplacement-derogatoire-q4-2020/'

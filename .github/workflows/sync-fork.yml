@@ -2,25 +2,28 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '* 4 * * *'
+  workflow_dispatch:
 
 jobs:
-  sync_with_upstream:
+  merge:
     runs-on: ubuntu-latest
-    name: Sync master with upstream latest
-
     steps:
-      # Step 1: run a standard checkout action, provided by github
-      - name: Checkout master
-        uses: actions/checkout@v2
-        with:
-          ref: master
+      - uses: actions/checkout@v2
+      - name: Merge upstream
+        run: |
+          git config --global user.name 'Thomas'
+          git config --global user.email 'tpucci@users.noreply.github.com'
 
-      # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
-      - name: Pull (Fast-Forward) upstream changes
-        id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v2.0
-        with:
-          upstream_repository: LAB-MI/attestation-deplacement-derogatoire-q4-2020
-          upstream_branch: master
-          target_branch: master
+          # "git checkout master" is unnecessary, already here by default
+          git pull --unshallow  # this option is very important, you would get
+                                # complains about unrelated histories without it.
+                                # (but actions/checkout@v2 can also be instructed
+                                # to fetch all git depth right from the start)
+
+          git remote add upstream https://github.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020.git
+          git fetch upstream
+
+          git checkout main
+          git merge --no-edit upstream/main
+          git push origin main
