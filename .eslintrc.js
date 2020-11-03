@@ -4,32 +4,22 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ["standard"],
+  extends: ['standard'],
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "comma-dangle": [2, "always-multiline"],
-    "no-var": 2,
-    "semi": "off",
-    "space-before-function-paren": "off"
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'comma-dangle': [2, 'always-multiline'],
+    'no-var': 2,
   },
   overrides: [
     {
-      files: ["**/__tests__/*.js", "**/tests/unit/**/*.spec.js"],
+      files: ['**/__tests__/*.js', '**/tests/unit/**/*.spec.js'],
       env: {
-        jest: true
-      }
-    }
+        jest: true,
+      },
+    },
   ],
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint',
   },
-  overrides: [
-    {
-      files: ["**/__tests__/*.js", "**/tests/unit/**/*.spec.js"],
-      env: {
-        jest: true
-      }
-    }
-  ]
-};
+}
